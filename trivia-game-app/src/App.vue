@@ -2,18 +2,19 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HomePage msg="Welcome to The Trivia Game"/>
-    <Question/>
+    <QuizContainer/>
   </div>
 </template>
 
 <script>
 import HomePage from './components/HomePage.vue'
-import Question from './components/Question.vue'
+import QuizContainer from './components/QuizContainer.vue'
+
 export default {
   name: 'App',
   components: {
     HomePage,
-    Question
+    QuizContainer,
   }
 }
 </script>
