@@ -7,6 +7,7 @@
       :currentQuestion="fetchedQuestions[currentQuestion]"
       @next-question="nextQuestion"
       @get-user-score="getUserScore"
+      @get-user-answers="getUserAnswers"
     />
   </div>
 </template>
@@ -26,6 +27,7 @@ export default {
     currentQuestion: 0,
     answers: [],
     totalScore: 0,
+    userAnswers: []
   }),
 
   mounted() {
@@ -50,6 +52,12 @@ export default {
       }
       console.log(this.totalScore);
     },
+
+    getUserAnswers(answer) {
+      console.log("inside getUseranswers: ", answer.option);
+      this.userAnswers.push(answer.option);
+      console.log("list of all answers", this.userAnswers);
+    }
   },
 };
 </script>
