@@ -1,22 +1,13 @@
 <template>
   <div id="app">
-    <router-view></router-view>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HomePage msg="Welcome to The Trivia Game"/>
-    <QuizContainer/>
+     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HomePage from './components/HomePage.vue'
-import QuizContainer from './components/QuizContainer.vue'
-
 export default {
-  name: 'App',
-  components: {
-    HomePage,
-    QuizContainer,
-  }
+  name: 'App'
+
 }
 </script>
 

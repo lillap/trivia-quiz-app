@@ -12,7 +12,7 @@ const routes = [
         component: HomePage
     },
     {
-        path: '/trivia',
+        path: '/QuizContainer',
         name: "QuizContainer",
         component: QuizContainer
     }
