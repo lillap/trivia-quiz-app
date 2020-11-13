@@ -1,20 +1,14 @@
 <template>
   <div class="homePage">
-    <h1>{{ msg }}</h1>
-    <p>
-      Get started
-      <button>Click here!</button>
-    </p>
-  
+    <img alt="Vue logo" src="../assets/logo.png">
+    <h1>Welcome to The Trivia Game</h1>
+    <router-link to="/QuizContainer"><button>Start Game!</button></router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HomePage',
-  props: {
-    msg: String
-  }
+  name: 'HomePage'
 }
 </script>
 
