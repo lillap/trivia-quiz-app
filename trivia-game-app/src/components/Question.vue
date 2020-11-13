@@ -2,16 +2,16 @@
   <div class="question-container">
     <h3>{{ currentQuestion.question }}</h3>
     <div class="answer-options">
-      <button id="redBtn" v-on:click="nextQuestion">
+      <button v-on:click="() => handleUserChoice(answers[0])" id="redBtn">
         {{ answers[0].option }}
       </button>
-      <button v-on:click="nextQuestion" id="yellowBtn">
+      <button v-on:click="() => handleUserChoice(answers[1])" id="yellowBtn">
         {{ answers[1].option }}
       </button>
-      <button v-on:click="nextQuestion" id="greenBtn">
+      <button v-on:click="() => handleUserChoice(answers[2])" id="greenBtn">
         {{ answers[2].option }}
       </button>
-      <button v-on:click="nextQuestion" id="blueBtn">
+      <button v-on:click="() => handleUserChoice(answers[3])" id="blueBtn">
         {{ answers[3].option }}
       </button>
     </div>
@@ -53,10 +53,13 @@ export default {
       }
       return shuffledAnswers;
     },
-    nextQuestion() {
+
+    handleUserChoice(answer) {
       this.$emit("next-question");
-    },
-  },
+      this.$emit("get-user-score", answer);
+      this.$emit("get-user-answers", answer);
+    }
+  }
 };
 </script>
 

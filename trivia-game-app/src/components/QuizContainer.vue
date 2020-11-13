@@ -6,6 +6,8 @@
     <Question
       :currentQuestion="fetchedQuestions[currentQuestion]"
       @next-question="nextQuestion"
+      @get-user-score="getUserScore"
+      @get-user-answers="getUserAnswers"
     />
   </div>
 </template>
@@ -24,6 +26,8 @@ export default {
     fetchedQuestions: [],
     currentQuestion: 0,
     answers: [],
+    totalScore: 0,
+    userAnswers: []
   }),
 
   mounted() {
@@ -34,8 +38,26 @@ export default {
   },
   methods: {
     nextQuestion() {
-      this.currentQuestion++;
+      if (this.currentQuestion === 9) {
+        this.$router.push("/ScorePage");
+      } else {
+        this.currentQuestion++;
+      }
     },
+
+    getUserScore(answer) {
+      console.log("Test inside get user answer: ", answer);
+      if (answer.correct) {
+        this.totalScore += 10;
+      }
+      console.log(this.totalScore);
+    },
+
+    getUserAnswers(answer) {
+      console.log("inside getUseranswers: ", answer.option);
+      this.userAnswers.push(answer.option);
+      console.log("list of all answers", this.userAnswers);
+    }
   },
 };
 </script>
