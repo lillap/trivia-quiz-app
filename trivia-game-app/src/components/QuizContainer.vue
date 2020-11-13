@@ -34,7 +34,12 @@ export default {
   },
   methods: {
     nextQuestion() {
-      this.currentQuestion++;
+      if (this.currentQuestion === 9) {
+        console.log(this.currentQuestion);
+        this.$router.push("/ScorePage");
+      } else {
+        this.currentQuestion++;
+      }
     },
   },
 };
