@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <router-view></router-view>
     <img alt="Vue logo" src="./assets/logo.png">
     <HomePage msg="Welcome to The Trivia Game"/>
     <QuizContainer/>
