@@ -5,7 +5,7 @@
     </h2>
     <Question
       :currentQuestion="fetchedQuestions[currentQuestion]"
-      @next-question="nextQuestion"
+      @next-question="nextQuestion" @get-user-answers="getUserAnswers"
     />
   </div>
 </template>
@@ -24,6 +24,7 @@ export default {
     fetchedQuestions: [],
     currentQuestion: 0,
     answers: [],
+    totalScore: 0,
   }),
 
   mounted() {
@@ -41,7 +42,16 @@ export default {
         this.currentQuestion++;
       }
     },
+    getUserAnswers(answer) {
+      console.log("Inside get User Answers", answer);
+      if (answer.correct) {
+        this.totalScore += 10;
+      }
+      console.log("total score is:", this.totalScore);
+    }
+
   },
+
 };
 </script>
 
