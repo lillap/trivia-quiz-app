@@ -1,9 +1,9 @@
 <template>
   <div class="background">
-    <h1>You have finished the trivia game!</h1>
+    <h1>You have finished the trivia!</h1>
     <h2 class="total-score-header">
       <!--Displays the total highscore for the user -->
-      Your total score is: {{ totalScore }} out of 100
+      Your total score is: {{ totalScore }} out of 100 points.
     </h2>
     <table>
       <tr>
@@ -21,7 +21,7 @@
 
     <!-- Re-routes and lets the user start the game from scratch again -->
     <router-link to="/"
-      ><button class="start-over-btn">Start Over!</button></router-link
+      ><button class="start-over-btn"><b>Play again!</b></button></router-link
     >
   </div>
 </template>
@@ -61,10 +61,10 @@ td {
 }
 
 .start-over-btn {
-  background: rgba(76, 175, 80, 0.4);
+  background: rgba(104, 202, 107, 0.4);
 }
 
 .start-over-btn:hover {
-  background: rgba(76, 175, 80, 0.9);
+  background: rgba(91, 212, 95, 0.9);
 }
 </style>
