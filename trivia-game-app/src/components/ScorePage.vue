@@ -14,8 +14,7 @@
         <td>{{result.correctAnswer}}</td>
       </tr>
     </table>
-
-    <button>Start over!</button>
+   <router-link to="/"><button>Start Over!</button></router-link>
   </div>
 </template>
 
