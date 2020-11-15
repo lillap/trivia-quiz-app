@@ -39,24 +39,20 @@ export default {
   methods: {
     nextQuestion() {
       if (this.currentQuestion === 9) {
-        this.$router.push("/ScorePage");
+        this.$router.push({name: "ScorePage", params: {totalScore: this.totalScore}});
       } else {
         this.currentQuestion++;
       }
     },
 
     getUserScore(answer) {
-      console.log("Test inside get user answer: ", answer);
       if (answer.correct) {
         this.totalScore += 10;
       }
-      console.log(this.totalScore);
     },
 
     getUserAnswers(answer) {
-      console.log("inside getUseranswers: ", answer.option);
       this.userAnswers.push(answer.option);
-      console.log("list of all answers", this.userAnswers);
     }
   },
 };

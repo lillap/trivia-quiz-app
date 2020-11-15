@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>You have finished the trivia game!</h1>
-    <h2>Your total score is :</h2>
+    <h2>Your total score is: {{totalScore}}</h2>
     <p>Your answers</p>
     <p>Correct answers</p>
     <button>Start over!</button>
@@ -9,7 +9,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "ScorePage", 
+  props: {
+    totalScore: Number, 
+  },
+};
 </script>
 
 <style></style>
