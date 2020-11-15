@@ -7,7 +7,6 @@
       :currentQuestion="fetchedQuestions[currentQuestion]"
       @next-question="nextQuestion"
       @get-user-score="getUserScore"
-      @get-user-answers="getUserAnswers"
     />
   </div>
 </template>
@@ -27,7 +26,7 @@ export default {
     currentQuestion: 0,
     answers: [],
     totalScore: 0,
-    userAnswers: []
+    resultData: []
   }),
 
   mounted() {
@@ -39,22 +38,25 @@ export default {
   methods: {
     nextQuestion() {
       if (this.currentQuestion === 9) {
-        this.$router.push({name: "ScorePage", params: {totalScore: this.totalScore}});
+        this.$router.push({name: "ScorePage", params: {
+          totalScore: this.totalScore, resultData: this.resultData}  
+        });
       } else {
         this.currentQuestion++;
       }
     },
 
-    getUserScore(answer) {
+    getUserScore(answer, currentQuestion) {
+      this.resultData.push({
+        question: currentQuestion.question,
+        correctAnswer: currentQuestion.correct_answer,
+        userAnswer: answer.option
+      })
       if (answer.correct) {
-        this.totalScore += 10;
+        this.totalScore += 10
       }
-    },
-
-    getUserAnswers(answer) {
-      this.userAnswers.push(answer.option);
     }
-  },
+  }
 };
 </script>
 
