@@ -57,7 +57,7 @@ export default {
     getUserResult(answer, currentQuestion) {
       this.resultData.push({
         question: currentQuestion.question,
-        correctAnswer: currentQuestion.correct_answer,
+        correctAnswer: currentQuestion.correctAnswer,
         userAnswer: answer.option,
       });
       if (answer.correct) {

@@ -1,6 +1,6 @@
 <template>
   <div class="question-container">
-    <h3>{{ currentQuestion.question }}</h3>
+    <h3>{{ question }}</h3>
     <div class="answer-options">
       <button v-on:click="() => handleUserChoice(answers[0])" id="redBtn">
         {{ answers[0].option }}
@@ -26,16 +26,22 @@ export default {
   },
 
   computed: {
+    question: function() {
+      return this.unescapeHtml(this.currentQuestion.question);
+
+    },
+
+
     //Adds the incorrect answer and the correct answer to different lists.
     answers: function() {
       let answers = [];
       answers.push({
-        option: this.currentQuestion.correct_answer,
+        option: this.unescapeHtml(this.currentQuestion.correct_answer),
         correct: true,
       });
       this.currentQuestion.incorrect_answers.map((incorrectAnswer) => {
         answers.push({
-          option: incorrectAnswer,
+          option: this.unescapeHtml(incorrectAnswer),
           correct: false,
         });
       });
@@ -59,8 +65,16 @@ export default {
     // Handles the interaction between the click and corresponding method.
     handleUserChoice(answer) {
       this.$emit("next-question");
-      this.$emit("get-user-result", answer, this.currentQuestion);
+      this.$emit("get-user-result", answer, {question: this.question, correctAnswer: this.unescapeHtml(this.currentQuestion.correct_answer)});
     },
+
+    unescapeHtml(safe) {
+    return safe.replace(/&amp;/g, '&')
+        .replace(/&quot;/g, '"')
+        .replace(/&#039;/g, "'")
+        .replace(/&ldquo;/g, "“")
+        .replace(/&rdquo;/g, "”");
+}
   },
 };
 </script>
