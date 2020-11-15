@@ -56,8 +56,7 @@ export default {
 
     handleUserChoice(answer) {
       this.$emit("next-question");
-      this.$emit("get-user-score", answer);
-      this.$emit("get-user-answers", answer);
+      this.$emit("get-user-score", answer, this.currentQuestion);
     }
   }
 };

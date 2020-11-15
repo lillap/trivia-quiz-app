@@ -21,6 +21,7 @@ const routes = [
     path: "/ScorePage",
     name: "ScorePage",
     component: ScorePage,
+    props: true,
   },
 ];
 
