@@ -26,6 +26,7 @@ export default {
   },
 
   computed: {
+    //Adds the incorrect answer and the correct answer to different lists.
     answers: function() {
       let answers = [];
       answers.push({
@@ -43,6 +44,8 @@ export default {
   },
 
   methods: {
+    /*Shuffles the different answers so that the buttons and the answers won't be at the same location for each iteration.
+    This is done so that the user won't be able to guess which is the correct answer depending on the position of the button.*/
     shuffleAnswers(answers) {
       let shuffledAnswers = answers;
       for (let i = answers.length - 1; i > 0; i--) {
@@ -53,12 +56,12 @@ export default {
       }
       return shuffledAnswers;
     },
-
+    // Handles the interaction between the click and corresponding method.
     handleUserChoice(answer) {
       this.$emit("next-question");
-      this.$emit("get-user-score", answer, this.currentQuestion);
-    }
-  }
+      this.$emit("get-user-result", answer, this.currentQuestion);
+    },
+  },
 };
 </script>
 
