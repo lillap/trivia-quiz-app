@@ -1,4 +1,4 @@
-# trivia-quiz-app
+# Trivia Quiz App
 
 ## About
 A web application built with the framework Vue.js. The application is a trivia quiz consisting of 10 questions, where the total score, the questions, the user's answers and the correct answers are displayed by the end of the trivia quiz.
@@ -35,6 +35,7 @@ The application is hosted at: https://trivia-lillap-vattenkruka.herokuapp.com/
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## License 
+MIT 
 
-### Authors
+## Authors
 lillap and Vattenkruka
