@@ -1,7 +1,7 @@
 # trivia-game-app
 
 ## About
-A web application built with the framework Vue.js. The application is a trivia game consisting of 10 questions, where the result is displayed by the end of the trivia quiz.
+A web application built with the framework Vue.js. The application is a trivia quiz consisting of 10 questions, where the total score, the questions, the user's answers and the correct answers are displayed by the end of the trivia quiz.
 
 * The API used in the project can be found at  https://opentdb.com/api_config.php 
 
@@ -11,6 +11,7 @@ The application is hosted at: https://trivia-lillap-vattenkruka.herokuapp.com/
 
 ## Project setup
 1. Clone the repo at: https://github.com/lillap/trivia-game-app.git
+2. Then follow these steps: 
 ```
  npm install
 ```
