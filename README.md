@@ -1,4 +1,4 @@
-# trivia-game-app
+# trivia-quiz-app
 
 ## About
 A web application built with the framework Vue.js. The application is a trivia quiz consisting of 10 questions, where the total score, the questions, the user's answers and the correct answers are displayed by the end of the trivia quiz.
